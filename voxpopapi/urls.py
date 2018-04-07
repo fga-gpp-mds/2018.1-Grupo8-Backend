@@ -5,13 +5,10 @@ from rest_framework import routers
 
 from rest_framework_swagger.views import get_swagger_view
 
-from api.views import UserViewset, SocialInformationViewset
-
 schema_view = get_swagger_view(title='VoxPop API')
 
 router = routers.DefaultRouter()
-router.register(r'users', UserViewset)
-router.register(r'socialInformation', SocialInformationViewset)
+# router.register(r'users', UserViewSet)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
