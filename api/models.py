@@ -48,8 +48,10 @@ EDUCATION_CHOICES = (
 class Person(User):
     def save(self, **kwargs):  # pylint: disable=arguments-differ
         super(Person, self).save(**kwargs)
-        social = SocialInformation(owner=self)
-        social.save()
+        if (SocialInformation.objects.filter(owner=self).
+            count() == 0):
+            social = SocialInformation(owner=self)
+            social.save()
 
 class SocialInformation(models.Model):
 
