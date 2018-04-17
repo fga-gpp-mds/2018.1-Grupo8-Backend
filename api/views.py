@@ -5,7 +5,6 @@ from .serializers import (
                             SocialInformationSerializer,
                         )
 from rest_framework.viewsets import ModelViewSet
-from django.contrib.auth.models import User
 from .permissions import UserPermissions, SocialInformationPermissions
 
 
