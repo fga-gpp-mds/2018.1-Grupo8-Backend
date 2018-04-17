@@ -173,7 +173,7 @@ class SocialInformationTests(APITestCase):
         """
         data = {
             "owner": self.user,
-            "state": "AC",
+            "federal_unit": "AC",
             "city": "Rio Branco",
             "income": "10.00",
             "education": "EFC",
@@ -190,7 +190,7 @@ class SocialInformationTests(APITestCase):
         self.assertEqual(self.social.job, '')
         data = {
             "owner": self.user.pk,
-            "state": "AC",
+            "federal_unit": "AC",
             "city": "Rio Branco",
             "income": "10.00",
             "education": "EFC",
@@ -210,7 +210,7 @@ class SocialInformationTests(APITestCase):
         self.assertEqual(self.social.birth_date, datetime.date(2018, 4, 17))
         data = {
             "owner": self.user.pk,
-            "state": "AC",
+            "federal_unit": "AC",
             "city": "Rio Branco",
             "income": "10.00",
             "education": "EFC",

@@ -28,7 +28,7 @@ class SocialInformationViewset(ModelViewSet):
                 {
                     "id": 3,
                     "owner": 1,
-                    "state": "AC",
+                    "federal_unit": "AC",
                     "city": "Rio Branco",
                     "income": "1200.00",
                     "education": "EFC",
@@ -38,7 +38,7 @@ class SocialInformationViewset(ModelViewSet):
                 {
                     "id": 4,
                     "owner": 2,
-                    "state": "AC",
+                    "federal_unit": "AC",
                     "city": "Rio Branco",
                     "income": "3400.00",
                     "education": "EFC",
@@ -58,7 +58,7 @@ class SocialInformationViewset(ModelViewSet):
           ```
           {
             "owner": 2,
-            "state": "AC",
+            "federal_unit": "AC",
             "city": "Rio Branco",
             "income": "3400.00",
             "education": "EFC",
@@ -71,7 +71,7 @@ class SocialInformationViewset(ModelViewSet):
           {
             "id": 1,
             "owner": 2,
-            "state": "AC",
+            "federal_unit": "AC",
             "city": "Rio Branco",
             "income": "3400.00",
             "education": "EFC",
@@ -98,7 +98,7 @@ class SocialInformationViewset(ModelViewSet):
         {
           "id": 1,
           "owner": 2,
-          "state": "AC",
+          "federal_unit": "AC",
           "city": "Rio Branco",
           "income": "3400.00",
           "education": "EFC",
@@ -125,7 +125,7 @@ class SocialInformationViewset(ModelViewSet):
           {
             "id": 1,
             "owner": 2,
-            "state": "AC",
+            "federal_unit": "AC",
             "city": "Rio Branco",
             "income": "3700.00",
             "education": "EFC",
@@ -148,7 +148,7 @@ class SocialInformationViewset(ModelViewSet):
           ```
           {
             "owner": 2,
-            "state": "GO",
+            "federal_unit": "GO",
             "city": "Luziânia",
             "income": "3700.00",
             "education": "ESC",
@@ -161,7 +161,7 @@ class SocialInformationViewset(ModelViewSet):
           {
             "id": 1,
             "owner": 2,
-            "state": "GO",
+            "federal_unit": "GO",
             "city": "Luziânia",
             "income": "3700.00",
             "education": "ESC",
@@ -207,7 +207,7 @@ class UserViewset(ModelViewSet):
                   "social_information": {
                     "id": 3,
                     "owner": 1,
-                    "state": "AC",
+                    "federal_unit": "AC",
                     "city": "Rio Branco",
                     "income": "1200.00",
                     "education": "EFC",
@@ -224,7 +224,7 @@ class UserViewset(ModelViewSet):
                   "social_information": {
                     "id": 4,
                     "owner": 2,
-                    "state": "AC",
+                    "federal_unit": "AC",
                     "city": "34",
                     "income": "34.00",
                     "education": "EFC",
@@ -287,7 +287,7 @@ class UserViewset(ModelViewSet):
           "social_information": {
             "id": 4,
             "owner": 2,
-            "state": "AC",
+            "federal_unit": "AC",
             "city": "34",
             "income": "34.00",
             "education": "EFC",
@@ -321,7 +321,7 @@ class UserViewset(ModelViewSet):
             "social_information": {
               "id": 4,
               "owner": 2,
-              "state": "AC",
+              "federal_unit": "AC",
               "city": "34",
               "income": "34.00",
               "education": "EFC",
@@ -361,7 +361,7 @@ class UserViewset(ModelViewSet):
             "social_information": {
               "id": 4,
               "owner": 2,
-              "state": "AC",
+              "federal_unit": "AC",
               "city": "34",
               "income": "34.00",
               "education": "EFC",
