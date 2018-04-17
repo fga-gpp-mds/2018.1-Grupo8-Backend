@@ -1,4 +1,4 @@
-from .models import SocialInformation
+from .models import SocialInformation, Person
 from rest_framework import serializers
 from django.contrib.auth.models import User
 from rest_framework.authtoken.models import Token
@@ -23,7 +23,7 @@ class UserSerializer(serializers.ModelSerializer):
     social_information = SocialInformationSerializer(read_only=True)
 
     class Meta:
-        model = User
+        model = Person
         fields = [
             'id',
             'username',
@@ -41,7 +41,7 @@ class UserSerializer(serializers.ModelSerializer):
         }
 
     def create(self, validated_data):
-        voxpopuser = User(**validated_data)
+        voxpopuser = Person(**validated_data)
         password = validated_data['password']
         voxpopuser.set_password(password)
         voxpopuser.save()
