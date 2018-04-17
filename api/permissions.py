@@ -44,8 +44,8 @@ class SocialInformationPermissions(permissions.BasePermission):
             return False
 
         elif (request.method == 'POST' and
-                SocialInformation.objects.filter(owner=request.user).count()
-                == 0):
+                SocialInformation.objects.filter(owner=request.user).
+                count() == 0):
             return True
 
         elif 'socialInformation' in request.path:
