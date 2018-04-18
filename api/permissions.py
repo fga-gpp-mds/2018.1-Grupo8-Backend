@@ -48,13 +48,13 @@ class SocialInformationPermissions(permissions.BasePermission):
                 count() == 0):
             return True
 
-        elif 'socialInformation' in request.path:
+        elif 'social_information' in request.path:
 
             social_information = \
                 SocialInformation.objects.filter(owner=request.user.id)
             if(social_information):
                 social_information = social_information.first().id
-            url_id = request.path.split('/socialInformation/')[1][:-1]
+            url_id = request.path.split('/social_information/')[1][:-1]
 
             if(url_id == str(social_information)):
                 authorized_user = True
