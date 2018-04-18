@@ -46,10 +46,19 @@ EDUCATION_CHOICES = (
 )
 
 
+class CustomUser(User):
+    def save(self, **kwargs):  # pylint: disable=arguments-differ
+        super(CustomUser, self).save(**kwargs)
+        if (SocialInformation.objects.filter(owner=self).
+            count() == 0):
+            social = SocialInformation(owner=self)
+            social.save()
+
+
 class SocialInformation(models.Model):
 
     owner = models.OneToOneField(
-        User,
+        CustomUser,
         related_name='social_information',
         on_delete=models.CASCADE
     )
