@@ -1,6 +1,5 @@
-from .models import SocialInformation
+from .models import SocialInformation, CustomUser
 from rest_framework import serializers
-from django.contrib.auth.models import User
 
 
 class SocialInformationSerializer(serializers.ModelSerializer):
@@ -22,7 +21,7 @@ class UserSerializer(serializers.ModelSerializer):
     social_information = SocialInformationSerializer(read_only=True)
 
     class Meta:
-        model = User
+        model = CustomUser
         fields = [
             'id',
             'username',
@@ -38,3 +37,12 @@ class UserSerializer(serializers.ModelSerializer):
                 'write_only': True
             },
         }
+
+    def create(self, validated_data):
+        voxpopuser = CustomUser(**validated_data)
+        password = validated_data['password']
+        voxpopuser.set_password(password)
+        voxpopuser.save()
+        token = Token.objects.create(user=voxpopuser)
+        token.save()
+        return voxpopuser

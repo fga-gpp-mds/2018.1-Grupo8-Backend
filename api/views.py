@@ -1,8 +1,7 @@
 # # from django.shortcuts import render
-from .models import SocialInformation
+from .models import SocialInformation, CustomUser
 from .serializers import UserSerializer, SocialInformationSerializer
 from rest_framework.viewsets import ModelViewSet
-from django.contrib.auth.models import User
 
 
 class SocialInformationViewset(ModelViewSet):
@@ -179,8 +178,8 @@ class UserViewset(ModelViewSet):
      to be viewed, created, deleted or edited.
     """
     serializer_class = UserSerializer
-    class_name = User
-    queryset = User.objects.all()
+    class_name = CustomUser
+    queryset = CustomUser.objects.all()
 
     def list(self, request):
         """
