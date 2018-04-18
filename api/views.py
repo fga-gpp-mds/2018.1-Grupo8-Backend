@@ -1,7 +1,11 @@
 # # from django.shortcuts import render
 from .models import SocialInformation, CustomUser
-from .serializers import UserSerializer, SocialInformationSerializer
+from .serializers import (
+                            UserSerializer,
+                            SocialInformationSerializer,
+                        )
 from rest_framework.viewsets import ModelViewSet
+from .permissions import UserPermissions, SocialInformationPermissions
 
 
 class SocialInformationViewset(ModelViewSet):
@@ -9,6 +13,7 @@ class SocialInformationViewset(ModelViewSet):
     API endpoint that allows social information
      to be viewed, created, deleted or edited.
     """
+    permission_classes = (SocialInformationPermissions,)
     serializer_class = SocialInformationSerializer
     class_name = SocialInformation
     queryset = SocialInformation.objects.all()
@@ -177,6 +182,7 @@ class UserViewset(ModelViewSet):
     API endpoint that allows user
      to be viewed, created, deleted or edited.
     """
+    permission_classes = (UserPermissions,)
     serializer_class = UserSerializer
     class_name = CustomUser
     queryset = CustomUser.objects.all()
