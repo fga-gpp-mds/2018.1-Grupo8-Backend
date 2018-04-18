@@ -69,4 +69,4 @@ class SocialInformation(models.Model):
         max_length=150, choices=EDUCATION_CHOICES, default='EFC'
     )
     job = models.CharField(max_length=100, blank=True)
-    birth_date = models.DateField(default=datetime.date.today)
+    birth_date = models.DateField(default=datetime.date(1, 1, 1))
