@@ -1,5 +1,6 @@
 from .models import SocialInformation, CustomUser
 from rest_framework import serializers
+from rest_framework.authtoken.models import Token
 
 
 class SocialInformationSerializer(serializers.ModelSerializer):
