@@ -6,6 +6,7 @@ from rest_framework import routers
 from rest_framework_swagger.views import get_swagger_view
 
 from api.views import UserViewset, SocialInformationViewset
+from rest_framework.authtoken import views
 
 schema_view = get_swagger_view(title='VoxPop API')
 
@@ -18,5 +19,5 @@ urlpatterns = [
     url(r'^api/', include(router.urls)),
     url(r'^api/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^$', schema_view),
-    # url(r'^api/tokens/', views.obtain_auth_token),
+    url(r'^api/token_auth/', views.obtain_auth_token),
 ]
